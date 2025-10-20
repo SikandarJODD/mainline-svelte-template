@@ -9,7 +9,7 @@
 	import Testimonials from '$lib/components/blocks/testimonials.svelte';
 </script>
 
-<Background className="via-muted to-muted/80">
+<Background class="via-muted to-muted/80">
 	<Hero />
 	<Logos />
 	<Features />

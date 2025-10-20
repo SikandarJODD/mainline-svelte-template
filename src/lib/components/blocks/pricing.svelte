@@ -3,7 +3,6 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Card, CardContent } from '$lib/components/ui/card';
 	import { Switch } from '$lib/components/ui/switch';
-	import { Label } from '$lib/components/ui/label';
 	import { cn } from '$lib/utils';
 
 	interface PricingProps {
@@ -65,45 +64,51 @@
 			</p>
 		</div>
 
-		<!-- Billing Toggle -->
-		<div class="mt-8 flex items-center justify-center gap-3 md:mt-12">
-			<Label class="text-muted-foreground text-sm" for="billing-toggle">
-				Bill monthly
-			</Label>
-			<Switch id="billing-toggle" checked={isAnnual} onCheckedChange={(checked) => (isAnnual = checked)} />
-			<Label class="text-sm" for="billing-toggle">
-				Bill annually <span class="text-muted-foreground">(Save 20%)</span>
-			</Label>
-		</div>
-
-		<!-- Pricing Cards -->
-		<div class="mt-8 grid gap-6 md:mt-12 md:grid-cols-3">
+		<div class="mt-8 grid items-start gap-5 text-start md:mt-12 md:grid-cols-3 lg:mt-20">
 			{#each plans as plan}
-				<Card class="relative flex flex-col">
-					<CardContent class="flex flex-1 flex-col p-6">
-						<div class="mb-6">
-							<h3 class="mb-2 text-2xl font-bold">{plan.name}</h3>
-							{#if plan.description}
-								<p class="text-muted-foreground text-sm">{plan.description}</p>
-							{/if}
-							<div class="mt-4 flex items-baseline gap-1">
-								<span class="text-4xl font-bold">
+				<Card
+					class={cn(
+						plan.name === 'Startup' ? 'outline-primary origin-top outline-4' : ''
+					)}
+				>
+					<CardContent class="flex flex-col gap-7 px-6 py-5">
+						<div class="space-y-2">
+							<h3 class="text-foreground font-semibold">{plan.name}</h3>
+							<div class="space-y-1">
+								<div class="text-muted-foreground text-lg font-medium">
 									{isAnnual ? plan.yearlyPrice : plan.monthlyPrice}
-								</span>
-								<span class="text-muted-foreground text-sm">/month</span>
+									{#if plan.name !== 'Free'}
+										<span class="text-muted-foreground">
+											per user/{isAnnual ? 'year' : 'month'}
+										</span>
+									{/if}
+								</div>
 							</div>
 						</div>
 
-						<ul class="mb-6 flex-1 space-y-3">
-							{#each plan.features as feature}
-								<li class="flex items-start gap-3">
-									<Check class="text-primary mt-0.5 size-5 shrink-0" />
-									<span class="text-sm">{feature}</span>
-								</li>
-							{/each}
-						</ul>
+						{#if plan.name !== 'Free'}
+							<div class="flex items-center gap-2">
+								<Switch
+									checked={isAnnual}
+									onCheckedChange={() => (isAnnual = !isAnnual)}
+									aria-label="Toggle annual billing"
+								/>
+								<span class="text-sm font-medium">Billed annually</span>
+							</div>
+						{:else}
+							<span class="text-muted-foreground text-sm">{plan.description}</span>
+						{/if}
 
-						<Button class="w-full" variant={plan.name === 'Startup' ? 'default' : 'outline'}>
+						<div class="space-y-3">
+							{#each plan.features as feature}
+								<div class="text-muted-foreground flex items-center gap-1.5">
+									<Check class="size-5 shrink-0" />
+									<span class="text-sm">{feature}</span>
+								</div>
+							{/each}
+						</div>
+
+						<Button class="w-fit" variant={plan.name === 'Startup' ? 'default' : 'outline'}>
 							Get started
 						</Button>
 					</CardContent>

@@ -45,7 +45,7 @@
 		<!-- Features Card -->
 		<Card class="mt-8 rounded-3xl md:mt-12 lg:mt-20">
 			<CardContent class="flex p-0 max-md:flex-col">
-				{#each items as item, i (item.title)}
+				{#each items as item, i}
 					<div class="flex flex-1 max-md:flex-col">
 						<div class="flex-1 p-4 pe-0! md:p-6">
 							<div class="relative aspect-[1.28/1] overflow-hidden">
