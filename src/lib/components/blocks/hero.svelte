@@ -48,16 +48,16 @@
       <h1
         class="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl xl:whitespace-nowrap"
       >
-        Mainline Next.js template
+        Mainline SvelteKit template
       </h1>
 
       <p class="text-muted-foreground text-1xl mt-5 md:text-3xl">
         Mainline is an open-source website template built with shadcn/ui,
-        Tailwind 4 & Next.js
+        Tailwind 4 & SvelteKit
       </p>
 
       <div class="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
-        <Button href="https://github.com/sikandarjodd/mainline-svelte-template">
+        <Button href="https://github.com/SikandarJODD/mainline-svelte-template">
           Get template
         </Button>
         <Button

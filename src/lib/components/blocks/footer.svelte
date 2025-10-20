@@ -11,8 +11,10 @@
 	];
 
 	const social = [
-		{ name: 'Xwitter', href: 'https://x.com/ausrobdev' },
-		{ name: 'LinkedIn', href: '#' }
+		{ name: 'Twitter', href: 'https://x.com/Sikandar_Bhide' },
+		{ name: 'GitHub', href: 'https://github.com/SikandarJODD/mainline-svelte-template' },
+		{ name: 'LinkedIn', href: '#' },
+		{ name: 'Facebook', href: '#' }
 	];
 
 	const legal = [{ name: 'Privacy Policy', href: '/privacy' }];
@@ -27,7 +29,7 @@
 			Mainline is the fit-for-purpose tool for planning and building modern software products.
 		</p>
 		<div>
-			<Button size="lg" class="mt-4" href="https://github.com/shadcnblocks/mainline-nextjs-template">
+			<Button size="lg" class="mt-4" href="https://github.com/SikandarJODD/mainline-svelte-template">
 				Get template
 			</Button>
 		</div>

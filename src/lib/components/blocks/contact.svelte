@@ -57,16 +57,16 @@
 			<div>
 				<h2 class="font-medium">Follow us</h2>
 				<div class="mt-3 flex gap-6 lg:gap-10">
-					<a href="#" class="text-muted-foreground hover:text-foreground">
+					<a href="/" class="text-muted-foreground hover:text-foreground">
 						<Facebook class="size-5" />
 					</a>
 					<a
-						href="https://x.com/ausrobdev"
+						href="https://x.com/Sikandar_Bhide"
 						class="text-muted-foreground hover:text-foreground"
 					>
 						<Twitter class="size-5" />
 					</a>
-					<a href="#" class="text-muted-foreground hover:text-foreground">
+					<a href="/" class="text-muted-foreground hover:text-foreground">
 						<Linkedin class="size-5" />
 					</a>
 				</div>

@@ -6,13 +6,20 @@
 	import DashedLine from '$lib/components/other/dashed-line.svelte';
 </script>
 
+<svelte:head>
+	<title>About Us - Mainline SvelteKit Template | Free Startup Template</title>
+	<meta name="description" content="Learn about Mainline, a free and open-source SvelteKit template designed for modern startups. Built with shadcn-svelte and Tailwind CSS for rapid development." />
+	<meta name="keywords" content="about mainline, sveltekit template, startup solution, free template, open source, shadcn-svelte, modern web development" />
+	<meta name="author" content="Sikandar Bhide" />
+</svelte:head>
+
 <Background>
 	<div class="py-28 lg:py-32 lg:pt-44">
 		<AboutHero />
 
 		<About />
 		<div class="pt-28 lg:pt-32">
-			<DashedLine className="container max-w-5xl scale-x-115" />
+			<DashedLine class="container max-w-5xl scale-x-115" />
 			<Investors />
 		</div>
 	</div>

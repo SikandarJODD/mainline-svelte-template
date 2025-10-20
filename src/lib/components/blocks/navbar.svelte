@@ -119,7 +119,7 @@
         <span class="relative z-10">Login</span>
       </Button>
       <a
-        href="https://github.com/shadcnblocks/mainline-nextjs-template"
+        href="https://github.com/SikandarJODD/mainline-svelte-template"
         class="text-muted-foreground hover:text-foreground transition-colors"
       >
         <Github class="size-4" />

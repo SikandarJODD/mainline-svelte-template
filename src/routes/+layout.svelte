@@ -10,8 +10,10 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Mainline - Modern SvelteKit Template</title>
-	<meta name="description" content="A modern SvelteKit template built with shadcn-svelte, Tailwind CSS & TypeScript. Open source - MIT License." />
+	<title>Mainline - Free SvelteKit Template for Startups</title>
+	<meta name="description" content="A modern free SvelteKit template built with shadcn-svelte, Tailwind CSS & TypeScript. Perfect for startups and modern web applications. Open source - MIT License." />
+	<meta name="keywords" content="sveltekit, svelte template, free template, startup template, mainline, shadcn-svelte, tailwind css, cnblocks, open source, MIT license" />
+	<meta name="author" content="Sikandar Bhide" />
 </svelte:head>
 
 <ModeWatcher />

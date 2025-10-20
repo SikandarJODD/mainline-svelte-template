@@ -165,6 +165,7 @@
 					<h3 class="text-lg font-semibold">{section.category}</h3>
 				</div>
 				{#each section.features as feature}
+					{@const selectedPlanKey = pricingPlans[selectedPlan].name.toLowerCase() as keyof Feature}
 					<div
 						class="text-foreground grid grid-cols-2 font-medium max-md:border-b md:grid-cols-4"
 					>
@@ -172,33 +173,32 @@
 							{feature.name}
 						</div>
 						<div class="text-muted-foreground border-primary/40 py-4 md:hidden md:border-b">
-							{#if typeof feature[Object.keys(pricingPlans[selectedPlan])[0].toLowerCase()] === 'boolean'}
-								{#if feature[Object.keys(pricingPlans[selectedPlan])[0].toLowerCase()]}
+							{#if typeof feature[selectedPlanKey] === 'boolean'}
+								{#if feature[selectedPlanKey]}
 									<Check class="size-4" />
 								{:else}
 									<X class="text-muted-foreground size-4" />
 								{/if}
 							{:else}
 								<span class="text-muted-foreground">
-									{feature[
-										Object.keys(pricingPlans[selectedPlan])[0].toLowerCase()
-									]}
+									{feature[selectedPlanKey]}
 								</span>
 							{/if}
 						</div>
 						{#each pricingPlans as plan, index}
+							{@const planKey = plan.name.toLowerCase() as keyof Feature}
 							<div
 								class="text-muted-foreground border-primary/40 py-4 max-md:hidden md:border-b"
 							>
-								{#if typeof feature[plan.name.toLowerCase()] === 'boolean'}
-									{#if feature[plan.name.toLowerCase()]}
+								{#if typeof feature[planKey] === 'boolean'}
+									{#if feature[planKey]}
 										<Check class="size-4" />
 									{:else}
 										<X class="text-muted-foreground size-4" />
 									{/if}
 								{:else}
 									<span class="text-muted-foreground">
-										{feature[plan.name.toLowerCase()]}
+										{feature[planKey]}
 									</span>
 								{/if}
 							</div>

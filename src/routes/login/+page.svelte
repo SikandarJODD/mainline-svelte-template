@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { z } from 'zod';
 	import Background from '$lib/components/other/background.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Card, CardContent, CardHeader } from '$lib/components/ui/card';
@@ -17,41 +16,49 @@
 	let errors = $state<Partial<Record<keyof LoginSchema, string>>>({});
 	let isSubmitting = $state(false);
 
-	function validateForm() {
-		try {
-			loginSchema.parse(formData);
-			errors = {};
-			return true;
-		} catch (error) {
-			if (error instanceof z.ZodError) {
-				const newErrors: Partial<Record<keyof LoginSchema, string>> = {};
-				error.errors.forEach((err) => {
-					if (err.path[0]) {
-						newErrors[err.path[0] as keyof LoginSchema] = err.message;
-					}
-				});
-				errors = newErrors;
-			}
-			return false;
-		}
-	}
-
 	async function handleSubmit(e: Event) {
 		e.preventDefault();
 
-		if (!validateForm()) {
+		// Validate form data
+		const result = loginSchema.safeParse(formData);
+
+		if (!result.success) {
+			// Clear previous errors
+			errors = {};
+
+			// Map validation errors
+			result.error.issues.forEach((issue) => {
+				const field = issue.path[0] as keyof LoginSchema;
+				if (field) {
+					errors[field] = issue.message;
+				}
+			});
 			return;
 		}
 
+		// Clear errors and submit
+		errors = {};
 		isSubmitting = true;
 
-		// Simulate API call
-		await new Promise((resolve) => setTimeout(resolve, 1000));
-
-		console.log('Login data:', formData);
-		isSubmitting = false;
+		try {
+			// Simulate API call
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+			console.log('Login successful:', result.data);
+			// TODO: Handle successful login (redirect, etc.)
+		} catch (error) {
+			console.error('Login failed:', error);
+		} finally {
+			isSubmitting = false;
+		}
 	}
 </script>
+
+<svelte:head>
+	<title>Login - Mainline SvelteKit Template</title>
+	<meta name="description" content="Login to access Mainline SvelteKit template features. Free and open-source template for startups built with shadcn-svelte." />
+	<meta name="keywords" content="login, sveltekit template, mainline, authentication, free template" />
+	<meta name="author" content="Sikandar Bhide" />
+</svelte:head>
 
 <Background>
 	<section class="py-28 lg:pt-44 lg:pb-32">
@@ -115,7 +122,7 @@
 										Remember me
 									</label>
 								</div>
-								<a href="#" class="text-primary text-sm font-medium">Forgot password</a>
+								<a href="/forgot-password" class="text-primary text-sm font-medium">Forgot password</a>
 							</div>
 
 							<Button type="submit" class="mt-2 w-full" disabled={isSubmitting}>

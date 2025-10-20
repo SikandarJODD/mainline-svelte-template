@@ -1,10 +1,16 @@
-<script lang="ts">
-</script>
+
+
+<svelte:head>
+	<title>Privacy Policy - Mainline SvelteKit Template</title>
+	<meta name="description" content="Read the privacy policy for Mainline SvelteKit template. Learn how we handle data in this free and open-source startup template." />
+	<meta name="keywords" content="privacy policy, mainline, sveltekit template, data protection, free template" />
+	<meta name="author" content="Sikandar Bhide" />
+</svelte:head>
 
 <section class="mx-auto max-w-2xl px-4 py-28 lg:pt-44 lg:pb-32">
 	<article class="prose prose-lg dark:prose-invert max-w-none">
 		<h1>Privacy Policy</h1>
-		
+
 		<p>Last updated: October 20, 2025</p>
 
 		<p>

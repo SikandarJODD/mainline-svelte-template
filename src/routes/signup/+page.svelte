@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { z } from 'zod';
 	import Background from '$lib/components/other/background.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Card, CardContent, CardHeader } from '$lib/components/ui/card';
@@ -16,41 +15,49 @@
 	let errors = $state<Partial<Record<keyof SignupSchema, string>>>({});
 	let isSubmitting = $state(false);
 
-	function validateForm() {
-		try {
-			signupSchema.parse(formData);
-			errors = {};
-			return true;
-		} catch (error) {
-			if (error instanceof z.ZodError) {
-				const newErrors: Partial<Record<keyof SignupSchema, string>> = {};
-				error.errors.forEach((err) => {
-					if (err.path[0]) {
-						newErrors[err.path[0] as keyof SignupSchema] = err.message;
-					}
-				});
-				errors = newErrors;
-			}
-			return false;
-		}
-	}
-
 	async function handleSubmit(e: Event) {
 		e.preventDefault();
 
-		if (!validateForm()) {
+		// Validate form data
+		const result = signupSchema.safeParse(formData);
+
+		if (!result.success) {
+			// Clear previous errors
+			errors = {};
+
+			// Map validation errors
+			result.error.issues.forEach((issue) => {
+				const field = issue.path[0] as keyof SignupSchema;
+				if (field) {
+					errors[field] = issue.message;
+				}
+			});
 			return;
 		}
 
+		// Clear errors and submit
+		errors = {};
 		isSubmitting = true;
 
-		// Simulate API call
-		await new Promise((resolve) => setTimeout(resolve, 1000));
-
-		console.log('Signup data:', formData);
-		isSubmitting = false;
+		try {
+			// Simulate API call
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+			console.log('Signup successful:', result.data);
+			// TODO: Handle successful signup (redirect, etc.)
+		} catch (error) {
+			console.error('Signup failed:', error);
+		} finally {
+			isSubmitting = false;
+		}
 	}
 </script>
+
+<svelte:head>
+	<title>Sign Up - Mainline SvelteKit Template</title>
+	<meta name="description" content="Create an account to access Mainline SvelteKit template. Free open-source template for startups with modern web technologies." />
+	<meta name="keywords" content="signup, register, sveltekit template, mainline, free template, create account" />
+	<meta name="author" content="Sikandar Bhide" />
+</svelte:head>
 
 <Background>
 	<section class="py-28 lg:pt-44 lg:pb-32">

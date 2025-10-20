@@ -60,7 +60,7 @@
 							</div>
 
 							<a
-								href="#"
+								href="/"
 								class="group flex items-center justify-between gap-4 pe-4 pt-4 md:pe-6 md:pt-6"
 							>
 								<h3 class="font-display max-w-60 text-2xl font-bold leading-tight tracking-tight">
