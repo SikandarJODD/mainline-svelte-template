@@ -4,6 +4,71 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* DM Sans Font Family */
+@font-face {
+  font-family: 'DM Sans';
+  src: url('$lib/fonts/dm-sans/DMSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('$lib/fonts/dm-sans/DMSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('$lib/fonts/dm-sans/DMSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('$lib/fonts/dm-sans/DMSans-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('$lib/fonts/dm-sans/DMSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('$lib/fonts/dm-sans/DMSans-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('$lib/fonts/dm-sans/DMSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('$lib/fonts/dm-sans/DMSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   /* --radius: 0.625rem; */
   --radius: 0.5rem; /* 8px */
@@ -55,7 +120,7 @@
     0 8px 10px -1px hsl(0 0% 0% / 0.1);
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
 
-  --font-dm-sans: "dmSans", sans-serif;
+  --font-dm-sans: "DM Sans", sans-serif;
   --font-inter: "inter", sans-serif;
 
   --font-sans: var(--font-dm-sans), var(--font-inter), ui-sans-serif, system-ui,
