@@ -6,64 +6,64 @@
 
 /* DM Sans Font Family */
 @font-face {
-  font-family: 'DM Sans';
-  src: url('$lib/fonts/dm-sans/DMSans-Regular.ttf') format('truetype');
+  font-family: "DM Sans";
+  src: url("$lib/fonts/dm-sans/DMSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Sans';
-  src: url('$lib/fonts/dm-sans/DMSans-Italic.ttf') format('truetype');
+  font-family: "DM Sans";
+  src: url("$lib/fonts/dm-sans/DMSans-Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Sans';
-  src: url('$lib/fonts/dm-sans/DMSans-Medium.ttf') format('truetype');
+  font-family: "DM Sans";
+  src: url("$lib/fonts/dm-sans/DMSans-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Sans';
-  src: url('$lib/fonts/dm-sans/DMSans-MediumItalic.ttf') format('truetype');
+  font-family: "DM Sans";
+  src: url("$lib/fonts/dm-sans/DMSans-MediumItalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Sans';
-  src: url('$lib/fonts/dm-sans/DMSans-SemiBold.ttf') format('truetype');
+  font-family: "DM Sans";
+  src: url("$lib/fonts/dm-sans/DMSans-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Sans';
-  src: url('$lib/fonts/dm-sans/DMSans-SemiBoldItalic.ttf') format('truetype');
+  font-family: "DM Sans";
+  src: url("$lib/fonts/dm-sans/DMSans-SemiBoldItalic.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Sans';
-  src: url('$lib/fonts/dm-sans/DMSans-Bold.ttf') format('truetype');
+  font-family: "DM Sans";
+  src: url("$lib/fonts/dm-sans/DMSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Sans';
-  src: url('$lib/fonts/dm-sans/DMSans-BoldItalic.ttf') format('truetype');
+  font-family: "DM Sans";
+  src: url("$lib/fonts/dm-sans/DMSans-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -243,6 +243,8 @@
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-marquee: marquee var(--duration) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
 
   @keyframes accordion-down {
     from {
@@ -258,6 +260,25 @@
     }
     to {
       height: 0;
+    }
+  }
+
+  /* Define the marquee animations */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
 }
