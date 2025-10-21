@@ -1,11 +1,9 @@
 <script lang="ts">
-  import {
-    ArrowRight,
-    Blend,
-    ChartNoAxesColumn,
-    CircleDot,
-    Diamond,
-  } from "@lucide/svelte";
+  import ArrowRight from "@lucide/svelte/icons/arrow-right";
+  import Blend from "@lucide/svelte/icons/blend";
+  import ChartNoAxesColumn from "@lucide/svelte/icons/chart-no-axes-column";
+  import CircleDot from "@lucide/svelte/icons/circle-dot";
+  import Diamond from "@lucide/svelte/icons/diamond";
   import DashedLine from "../other/dashed-line.svelte";
   import { Button } from "$lib/components/ui/button";
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowUpRight } from '@lucide/svelte';
+	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 	import { Button } from '$lib/components/ui/button';
 
 	const navigation = [

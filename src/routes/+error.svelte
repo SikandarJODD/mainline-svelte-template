@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { ArrowLeft } from '@lucide/svelte';
+	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import Background from '$lib/components/other/background.svelte';
 	import { Button } from '$lib/components/ui/button';
 
