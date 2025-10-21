@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { ChevronRight, Github } from "@lucide/svelte";
+  import ChevronRight from "@lucide/svelte/icons/chevron-right";
+  import Github from "@lucide/svelte/icons/github";
   import ThemeToggle from "../other/theme-toggle.svelte";
   import { Button } from "$lib/components/ui/button";
   import * as NavigationMenu from "$lib/components/ui/navigation-menu";

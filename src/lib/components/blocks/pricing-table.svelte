@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { Check, ChevronsUpDown, X } from '@lucide/svelte';
+	import Check from '@lucide/svelte/icons/check';
+	import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
+	import X from '@lucide/svelte/icons/x';
 	import { Button } from '$lib/components/ui/button';
 	import {
 		Collapsible,

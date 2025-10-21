@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Check } from "@lucide/svelte";
+  import Check from "@lucide/svelte/icons/check";
   import { Button } from "$lib/components/ui/button";
   import { Checkbox } from "$lib/components/ui/checkbox";
   import { Input } from "$lib/components/ui/input";

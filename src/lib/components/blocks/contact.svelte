@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { Facebook, Linkedin, Twitter } from '@lucide/svelte';
+	import Facebook from '@lucide/svelte/icons/facebook';
+	import Linkedin from '@lucide/svelte/icons/linkedin';
+	import Twitter from '@lucide/svelte/icons/twitter';
 	import ContactForm from './contact-form.svelte';
 	import DashedLine from '../other/dashed-line.svelte';
 </script>
