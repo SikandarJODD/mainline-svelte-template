@@ -103,6 +103,8 @@
         src="/hero.webp"
         alt="hero"
         class="rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none"
+        style="position: absolute; inset: 0; width: 100%; height: 100%;"
+        loading="lazy"
       />
     </div>
   </div>

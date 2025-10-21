@@ -105,13 +105,3 @@
   </div>
 </section>
 
-<style>
-  @keyframes marquee-right {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0%);
-    }
-  }
-</style>
